@@ -36,7 +36,7 @@ const deposit = () => {
         const numberDepositAmmount = parseFloat(depositAmmount);
 
         if (isNaN(numberDepositAmmount) || numberDepositAmmount <= 0){
-            console.log("Invalid deposit ammount, try again.")
+            console.log("Invalid deposit ammount, try again.");
         }else{
             return numberDepositAmmount;
         }
@@ -50,7 +50,7 @@ const getNumberOfLines = () =>{
             const numberOfLines = parseFloat(lines);
     
             if (isNaN(numberOfLines) || numberOfLines <= 0 || numberOfLines > 3){
-                console.log("Invalid number of lines, try again.")
+                console.log("Invalid number of lines, try again.");
             }else{
                 return numberOfLines;
             }
@@ -63,7 +63,7 @@ const getBet = (balance, lines)=>{
             const numberBet = parseFloat(bet);
     
             if (isNaN(numberBet) || numberBet <= 0 || numberBet > balance / lines){
-                console.log("Invalid bet, balance to low, try again.")
+                console.log("Invalid bet, balance to low, try again.");
             }else{
                 return numberBet;
             }
@@ -78,10 +78,12 @@ const spin = () =>{
     }
 
   }
-  const reels = [[], [], []]
+  const reels = [[], [], []];
   for(let i = 0; i < COLS; i++){
+    const reelSymbols = [...symbols];
     for (let j = 0; j < ROWS; j++){
-        
+        const randomIndex = Math.floor(Math.random() * reelSymbols.length);
+        const selectedSymbol = reelSymbols[randomIndex];
     }
   }
 };
